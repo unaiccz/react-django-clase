@@ -1,0 +1,83 @@
+Promise { <state>: "pending" }
+​
+<state>: "fulfilled"
+​
+<value>: Array(10) [ {…}, {…}, {…}, … ]
+​​
+0: Object { id: 1, asignature: "si", date: "2023-10-04" }
+​​
+1: Object { id: 2, asignature: "bbdd", date: "2023-10-04" }
+​​
+2: Object { id: 3, asignature: "fcnube", date: "2023-10-19" }
+​​
+3: Object { id: 4, asignature: "ooo", date: "0021-02-11" }
+​​
+4: Object { id: 5, asignature: "ooo", date: "0021-02-11" }
+​​
+5: Object { id: 6, asignature: "ooo", date: "0021-02-11" }
+​​
+6: Object { id: 7, asignature: "sioswt", date: "01/20/20" }
+​​
+7: Object { id: 8, asignature: "sioswt", date: "01/20/20" }
+​​
+8: Object { id: 9, asignature: "bases de datos", date: "07/10/2023" }
+​​
+9: Object { id: 10, asignature: "uuu", date: "pp" }
+​​
+length: 10
+​​
+<prototype>: Array []
+​
+<prototype>: Promise.prototype { … }
+​​
+catch: function catch()
+​​
+constructor: function Promise()
+​​
+finally: function finally()
+​​
+then: function then()
+​​
+Symbol(Symbol.toStringTag): "Promise"
+​​
+<prototype>: Object { … }
+​​​
+__defineGetter__: function __defineGetter__()
+​​​
+__defineSetter__: function __defineSetter__()
+​​​
+__lookupGetter__: function __lookupGetter__()
+​​​
+__lookupSetter__: function __lookupSetter__()
+​​​
+__proto__: 
+​​​
+constructor: function Object()
+​​​
+hasOwnProperty: function hasOwnProperty()
+​​​
+isPrototypeOf: function isPrototypeOf()
+​​​
+propertyIsEnumerable: function propertyIsEnumerable()
+​​​
+toLocaleString: function toLocaleString()
+​​​
+toString: function toString()
+​​​
+valueOf: function valueOf()
+​​​
+<get __proto__()>: function __proto__()
+​​​​
+length: 0
+​​​​
+name: "get __proto__"
+​​​​
+<prototype>: function ()
+​​​
+<set __proto__()>: function __proto__()
+​​​​
+length: 1
+​​​​
+name: "set __proto__"
+​​​​
+<prototype>: function ()

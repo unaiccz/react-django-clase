@@ -1,31 +1,35 @@
-import React,{useEffect, useState} from 'react'
-import {useForm} from 'react-hook-form'
-import { pos, } from './components/Ft'
+import React, { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import { pos } from "./components/Ft";
+
 function App() {
-  useEffect(() => {
-    ft()
-  
-    return () => {
-      
-    }
-  }, [ ]);
+useEffect(() => {
+ft();
 
-  const [state, setstate] = useState();
+return () => {};
+}, []);
+
+const [state, setState] = useState();
+
 const ft = async () => {
-  const resp = await fetch('http://localhost:8000/clase/api/api/')
-  .then(resp => resp.json())
-  .then(data => {setstate(data)})
-}
-console.log(state)
-  const {register, handleSubmit}= useForm()
-const hs = handleSubmit (async(data) => {
-await pos(data)
-})
+const resp = await fetch("http://localhost:8000/clase/api/api/");
+const data = await resp.json();
+setState(data);
+};
 
-  return (
-    <div>
-      <h3>form</h3>
-      <form onSubmit={hs}>
+console.log(state);
+
+const { register, handleSubmit } = useForm();
+
+const hs = handleSubmit(async (data) => {
+await pos(data);
+});
+
+
+return (
+  <div>
+    <h3>form</h3>
+    <form onSubmit={hs}>
 
 <input type="text" placeholder='asignature'
 {...register('asignature')}
@@ -34,21 +38,43 @@ await pos(data)
 {...register('date')}
 />
 <button type='submit'>
-  send
+send
 </button>
 
-      </form>
+    </form>
+
+
+
+
+
 
 <ul>
 {
-  state.map(item =>{
-    <li key={item.id}>{item.date}</li>
-  })
-}
+    state.map((item) => {
+const {id,asignature,date} = item
+  return ( 
+
+    <>
+  <div style={{
+border: '1px solid',
+borderRadius: '5px',
+margin: '9px'
+  }}>
+  <p>asignatura: <h3>{asignature}</h3></p>
+    <br />
+    <p>fecha: <h3>{date}</h3></p>
+  </div>
+    </>
+  )    
+    }
+        ) 
+
+    
+    }
 </ul>
-
     </div>
-  )
+)
+
 }
 
-export default App
+export default App;

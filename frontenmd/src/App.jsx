@@ -18,15 +18,17 @@ function App() {
     <div>
       <h3>form</h3>
       <form onSubmit={hs}>
-        <input
-          type="text"
+       <div className="mb-3 mx-5">
+       <input
+          type="text" className="form-control"
           placeholder="asignature"
           {...register("asignature")}
         />
-        <input {...register("date")} />
-        <button type="submit">send</button>
+        <input {...register("date")}  className="form-control" placeholder="Fecha"/>
+        <button type="submit" className="btn btn-primary">send</button>
         <br />
-        <button onClick={rl}>Reload</button>
+        <button onClick={rl} className="btn btn-danger">Reload</button>
+       </div>
       </form>
       <View/>
     </div>

@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 function View() {
+  const del = (id,) => {
+axios.delete(`http://localhost:8000/clase/api/api/${id}/`)
+Swal.fire(`item ${id} deleted`)
+  }
   const [ex, setEx] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -37,18 +43,13 @@ function View() {
       <hr />
       <ul>
         {ex.map((item, index) => (
-<div key={index}
+<div key={index} className='card'
 //estilos de caja 
-style={{
-
-    border: '1px solid blue',
-    borderRadius: '8px',
-    margin: '20px',
-    padding: '9px'
-}}
 >
-<p>Asignatura: <br /> {item.asignature}</p>
-<p>Fecha: {item.date}</p>
+  <p>id: {item.id}</p>
+<p className='card-title'>Asignatura: <br /> {item.asignature}</p>
+<p className='card-text'>Fecha: {item.date}</p>
+<button className='btn btn-danger w-5' onClick={()=> del(item.id)}>DELETE</button>
 </div>
 
 ))}

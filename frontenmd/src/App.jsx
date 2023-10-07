@@ -4,11 +4,14 @@ import { pos } from "./components/Ft";
 import View from "./components/View";
 
 function App() {
+  const rl = () => window.location.reload();
 
   const { register, handleSubmit } = useForm();
 
   const hs = handleSubmit(async (data) => {
     await pos(data);
+    console.log(data)
+    //
   });
 
   return (
@@ -22,6 +25,8 @@ function App() {
         />
         <input {...register("date")} />
         <button type="submit">send</button>
+        <br />
+        <button onClick={rl}>Reload</button>
       </form>
       <View/>
     </div>
@@ -29,3 +34,4 @@ function App() {
 }
 
 export default App;
+//work

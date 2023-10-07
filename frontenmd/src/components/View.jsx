@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 function View() {
   const [ex, setEx] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -44,7 +43,8 @@ style={{
 
     border: '1px solid blue',
     borderRadius: '8px',
-    margin: '20px'
+    margin: '20px',
+    padding: '9px'
 }}
 >
 <p>Asignatura: <br /> {item.asignature}</p>

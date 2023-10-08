@@ -1,7 +1,7 @@
 import axios from 'axios'
 import Swal from 'sweetalert2'
 // export const Createe = (data) => axios.post('http://localhost:8000/clase/api/api​/',data)
-export const pos = (data) => {
+export const pos = async (data) => {
 if(data.asignature == "" || data.date == ""){
     Swal.fire({
         icon: 'error',
@@ -10,7 +10,7 @@ if(data.asignature == "" || data.date == ""){
         footer: '<a href="">todos son requeridos</a>'
       })
 }else{
-    axios.post('http://localhost:8000/clase/api/api/', data)
+    await axios.post('http://localhost:8000/clase/api/api/', data)
 }
 }
 export const gt = () => {

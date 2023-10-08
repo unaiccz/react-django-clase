@@ -17,8 +17,8 @@ function App() {
 
   return (
     <div>
-      <h3>form</h3>
-      <form onSubmit={hs}>
+      <h1>Examenes</h1>
+          <form onSubmit={hs}>
        <div className="mb-3 mx-5">
        <input
           type="text" className="form-control"
@@ -26,7 +26,7 @@ function App() {
           {...register("asignature")}
         />
         <input {...register("date")}  className="form-control" placeholder="Fecha"/>
-        <button type="submit" className="btn btn-primary" onClick={()=> Swal.fire('examen añadido, please reload')}>send</button>
+        <button type="submit" className="btn btn-primary" onClick={()=>   Swal.fire('examen añadido, please reload')}>send</button>
         <br />
         <button onClick={rl} className="btn btn-danger">Reload</button>
        </div>

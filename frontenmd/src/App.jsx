@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { pos } from "./components/Ft";
 import View from "./components/View";
 import Swal from "sweetalert2";
+import ApuntesView from "./apuntes/ApuntesView";
 
 function App() {
   const rl = () => window.location.reload();
@@ -16,7 +17,9 @@ function App() {
   });
 
   return (
-    <div>
+    <div
+    style={{ border:"1px dashed", padding: '6px', margin: '6px'}}
+    >
       <h1>Examenes</h1>
           <form onSubmit={hs}>
        <div className="mb-3 mx-5">
@@ -31,7 +34,10 @@ function App() {
         <button onClick={rl} className="btn btn-danger">Reload</button>
        </div>
       </form>
+      <hr />
       <View/>
+      <hr />
+      <ApuntesView/>
     </div>
   );
 }

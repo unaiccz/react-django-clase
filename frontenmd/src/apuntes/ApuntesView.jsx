@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-function View() {
+function ApuntesView() {
   const del = (id,) => {
-axios.delete(`http://localhost:8000/clase/api/api/${id}/`)
+axios.delete(`http://134.209.234.99:8000/clase/api/apunte/${id}/`)
 Swal.fire(`item ${id} deleted`)
   }
   const [ex, setEx] = useState([]);
@@ -13,12 +13,13 @@ Swal.fire(`item ${id} deleted`)
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await fetch('http://134.209.234.99:8000/clase/api/api/');
+        const res = await fetch('http://134.209.234.99:8000/clase/api/apunte/');
         if (!res.ok) {
           throw new Error('Error en la solicitud a la API');
         }
         const data = await res.json();
         setEx(data);
+        console.log(ex)
         setLoading(false);
       } catch (error) {
         setError(error.message);
@@ -39,7 +40,7 @@ Swal.fire(`item ${id} deleted`)
 
   return (
     <div>
-      <h3>Examenes venideros</h3>
+      <h3>Apuntes</h3>
       <hr />
       <ul>
         {ex.map((item, index) => (
@@ -47,8 +48,10 @@ Swal.fire(`item ${id} deleted`)
 //estilos de caja 
 >
   <p>id: {item.id}</p>
-<p className='card-title'>Asignatura: <br /> {item.asignature}</p>
-<p className='card-text'>Fecha: {item.date}</p>
+<p className='card-title'>Asignatura: <br /> {item.asignatura}</p>
+<p className='card-text'>tema: {item.tema}</p>
+<p className='card-text'>text: {item.text}</p>
+
 <button className='btn btn-danger w-5' onClick={()=> del(item.id)}>DELETE</button>
 </div>
 
@@ -58,4 +61,4 @@ Swal.fire(`item ${id} deleted`)
   );
 }
 
-export default View;
+export default ApuntesView;
